@@ -1,0 +1,30 @@
+#include<stdio.h>
+bool (isValid(char* s)) {
+int len =strlen(s);
+    char stack[len];
+    int top = -1;
+    for(int i=0;i<len;i++){
+        if(s[i]=='(' || s[i] == '{' || s[i] == '[' ){
+            stack[++top] = s[i];
+        }else{
+            if(top == -1 ||( s[i]==')'&&stack[top] != '(')||(s[i]=='}'&&stack[top] != '{')||(s[i]==']'&&stack[top]!='[')){
+                return false;
+            } 
+            top--;
+        } 
+    }  
+    return top == -1; 
+}
+int main() {
+    char s[100];
+    printf("Enter a string of parentheses: ");
+    scanf("%s", s);
+    if (isValid(s)) {
+        printf("Valid string\n");
+    } else {
+        printf("Invalid string\n");
+    }
+    return 0;
+}
+
+
