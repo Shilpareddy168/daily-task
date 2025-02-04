@@ -1,0 +1,16 @@
+#include <stdio.h>
+int missingNumber(int* nums, int numsSize) {
+    int total_sum = numsSize * (numsSize + 1) / 2;
+    int array_sum = 0;
+    for (int i = 0; i < numsSize; i++) {
+        array_sum += nums[i];
+    }
+    return total_sum - array_sum;
+}
+int main() {
+    int nums[] = {3, 0, 1};
+    int numsSize = sizeof(nums) / sizeof(nums[0]);
+    int missing_num = missingNumber(nums, numsSize);
+    printf("The missing number is: %d\n", missing_num);
+    return 0;
+}
