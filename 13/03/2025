@@ -1,0 +1,10 @@
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+     
+        s = s.rstrip()
+        words = s.split(' ')
+        return len(words[-1])
+        
+solution = Solution()
+n = input("Enter a string: ")
+print("The length of the last word is:", solution.lengthOfLastWord(n))
